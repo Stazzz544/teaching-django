@@ -1,0 +1,15 @@
+coolsite - это пакет конфигурации
+games - это пакет приложения
+
+запуск сервера
+python manage.py runserver
+python manage.py runserver 4000 (другой порт)
+python manage.py runserver 192.168.1.1:4000 (другой порт и ip adress) - на локальном компе может не сработать
+
+Создание приложения(сайт)
+python manage.py startapp games
+
+Регистрация приложения в джанго
+Заходим в пакет конфигурации -> coolsite
+ищем INSTALLED_APPS, прописываем - games.apps.GamesConfig
+

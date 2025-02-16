@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
@@ -22,6 +23,7 @@ from django.urls import path
 #from games.views import *
 from django.urls import path, include
 
+from coolsite import settings
 from games.views import page_not_found
 
 urlpatterns = [
@@ -30,5 +32,10 @@ urlpatterns = [
     #path('categories/', categories )
     path('',  include('games.urls'))
 ]
+
+#ТОЛЬКО ДЛЯ ОТЛАДОЧНОГО РЕЖИМА
+# к маршрутам urlpatterns добавится еще 1 маршрут(к загруженным файлах)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_rppt=settings.MEDIA_ROOT)
 
 handler404 = page_not_found

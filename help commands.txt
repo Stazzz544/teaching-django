@@ -1,3 +1,13 @@
+Виртуальное окружение
+python -m venv venv
+.\venv\Scripts\activate
+
+activate
+deactivate
+
+pip install django
+
+
 coolsite - это пакет конфигурации
 games - это пакет приложения
 
@@ -13,3 +23,25 @@ python manage.py startapp games
 Заходим в пакет конфигурации -> coolsite
 ищем INSTALLED_APPS, прописываем - games.apps.GamesConfig
 
+Миграции
+создание файла миграций
+python manage.py makemigrations
+
+чекнуть в консоле запрос, который будет выполнен для создания таблицы
+python manage.py sqlmigrate games 0001
+CREATE TABLE "games_games" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "title" varchar(40) NOT NULL, "content" text NOT NULL, "price" decimal NOT NULL, "image" varchar(100) NOT NULL, "time_create" datetime NOT NULL, "time_update" datetime NOT NULL, "is_published" bool NOT NULL);
+COMMIT;
+"games_games"- название таблицы (приложение + модель)
+
+python manage.py migrate - запустятся все миграции сразу
+
+
+войти в консоль DJANGO
+python manage.py shell
+
+импортировать модель
+from games.models import Games
+вызываем класс и передаём 2 параметра
+Games(title='Heroes 3', content='The great strategy game')
+w1 = _ - подстрочник - спец переменная, которая сохраняет в себе последние действия
+w1.save() - спецметод объекта

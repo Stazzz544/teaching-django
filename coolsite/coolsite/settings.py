@@ -12,11 +12,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
-#from django.conf.global_settings import MEDIA_ROOT
+# from django.conf.global_settings import MEDIA_ROOT
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -26,28 +25,54 @@ SECRET_KEY = 'django-insecure-6x6li&j49svt(td)xlb)dn9pyhso#xrv&r9ew)xv5kb9ts4c+b
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-#DEBUG = False - боевой режим
+# DEBUG = False - боевой режим
 
-#разрешенные хосты
+# разрешенные хосты
 ALLOWED_HOSTS = ['127.0.0.1']
-
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',  # корсы
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'games.apps.GamesConfig'
+    'games.apps.GamesConfig',
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # Разрешить запросы с этого домена
+]
+
+# Разрешить определённые HTTP-методы
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS',
+]
+
+# Разрешить определённые заголовки
+CORS_ALLOW_HEADERS = [
+    'Accept',
+    'Content-Type',
+    'Authorization',
+]
+
+# Разрешить передачу cookies
+CORS_ALLOW_CREDENTIALS = True
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # Должен быть первым
+    'django.middleware.security.SecurityMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -74,7 +99,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'coolsite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
@@ -84,7 +108,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -104,7 +127,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -116,7 +138,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
@@ -127,7 +148,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#папка медиа в текузей рабоей папке проекта
-#https://www.youtube.com/watch?v=k1wZKx6nMjg&list=PLA0M1Bcd0w8xO_39zZll2u1lz_Q-Mwn1F&index=4
+# папка медиа в текузей рабоей папке проекта
+# https://www.youtube.com/watch?v=k1wZKx6nMjg&list=PLA0M1Bcd0w8xO_39zZll2u1lz_Q-Mwn1F&index=4
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/MEDIA/'

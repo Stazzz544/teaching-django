@@ -18,22 +18,22 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-#from games.views import index
-#from games.views import categories
-#from games.views import *
+# from games.views import index
+# from games.views import categories
+# from games.views import *
 from django.urls import path, include
 
 from coolsite import settings
 from games.views import page_not_found
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
-    #path('games/', index),
-    #path('categories/', categories )
-    path('',  include('games.urls'))
+    # path('admin/', admin.site.urls),
+    # path('games/', index),
+    # path('categories/', categories )
+    path('', include('games.urls'))
 ]
 
-#ТОЛЬКО ДЛЯ ОТЛАДОЧНОГО РЕЖИМА
+# ТОЛЬКО ДЛЯ ОТЛАДОЧНОГО РЕЖИМА
 # к маршрутам urlpatterns добавится еще 1 маршрут(к загруженным файлах)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_rppt=settings.MEDIA_ROOT)

@@ -22,6 +22,8 @@ from django.urls import path
 # from games.views import categories
 # from games.views import *
 from django.urls import path, include
+#from coolsite import settings
+# from games.views import page_not_found
 
 from coolsite import settings
 from games.views import page_not_found

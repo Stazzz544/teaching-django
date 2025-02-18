@@ -1,4 +1,5 @@
 Виртуальное окружение
+В папке site набрать
 python -m venv venv
 .\venv\Scripts\activate
 
@@ -45,3 +46,34 @@ from games.models import Games
 Games(title='Heroes 3', content='The great strategy game')
 w1 = _ - подстрочник - спец переменная, которая сохраняет в себе последние действия
 w1.save() - спецметод объекта
+
+
+Методы для БД (+ работа из консоли)
+сначала надо войти в shell - python manage.py shell
+from games.models import Games
+Games.objects.all()  - получить все записи из таблицы(в консоли ограничение на 21 штуку)
+w = _
+w[0] - первый элемент
+w[0].title - поле
+len(w) - количество записей
+for wi in w:
+    print(wi.title) - перебор элементов
+
+Фильтрации
+Games.objects.filter(title='Heroes 3') - вернёт объект с заголовком Heroes 3
+аттрибуты  __gte (>=) и __lte(<=)
+Games.objects.filter(pk__gte=2)  - вернёт объекты с id >= 2
+Games.objects.exclude(pk__gte=2)  - вернёт всё кроме id >= 2
+Games.objects.exclude(pk=2) - работает, но по соглашению так делать не нужно
+Games.objects.get(pk=2) - то же что и выше
+get возвращает исключение, если ничего не найдено - это важно при авторизации пользователя например
+Games.objects.filter(pk__gte=2).order_by('title') - сортировка по заголовку и фильтрация по id
+
+Перезапись в бд
+w=Games.objects.get(pk=5)
+w.title = 'Sim-city 3000'
+w.save()
+
+удаление из бд (можно удалять сразу несколько)
+w=Games.objects.get(title='Star-craft')
+w.delete()

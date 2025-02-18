@@ -1,0 +1,18 @@
+{% extends 'games/base.html' %}
+
+{% block content %}
+     <h1>{{title}}</h1>
+     <p>Содержимое главной страницы</p>
+     <div>
+          {% for post in posts %}
+          <div>
+               <div>title: {{post.title}}</div>
+               <div>content: {{post.content}}</div>
+               <div>price: {{post.price}}</div>
+               <div>id: {{post.id}}</div>
+               <hr/>
+          </div>
+          {% endfor %}
+     </div>
+
+{% endblock %}

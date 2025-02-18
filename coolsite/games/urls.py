@@ -9,6 +9,7 @@ from .views import *
 urlpatterns = [
     # name='home' - параметр маршрута
     path('', index, name='home'),  # http://127.0.0.1:8000/
+    path('about', about, name='about'),
 
     path('categories/<int:id>/', categories),  # http://127.0.0.1:8000/categories/1
 

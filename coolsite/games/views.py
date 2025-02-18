@@ -1,9 +1,13 @@
 import json
 
 from django.http import HttpResponse, HttpResponseNotFound, Http404, JsonResponse
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.views.decorators.csrf import csrf_exempt
-from coolsite.games.models import Games
+
+from .models import *
+
+
+#для того, чтобы дёрнуть данные из базы
 
 
 # Create your views here.
@@ -75,9 +79,18 @@ def get(request):
     else:
         return JsonResponse({'error': 'Method not allowed'}, status=405)
 
+menu = ["О сайте", "Добавить статью", "Обратная связь"]
 
 def index(request):
-    return HttpResponse("СтранSица приложения Games")
+    posts = Games.objects.all()
+    return render(request, 'games/index.html', {
+        'title': 'Главная страница',
+        'menu': menu,
+        'posts':posts
+    })
+
+def about(request):
+    return render(request, 'games/about.html', {'title': 'О сайте', "menu": menu})
 
 
 def categories(request, id):
@@ -91,7 +104,7 @@ def categories(request, id):
                         f"<p>Текущий id: {id}</p>")
 
 
-# slug - бувы и цифры(латиница)
+# slug - буквы и цифры(латиница)
 def categories_slug(request, game):
     return HttpResponse(f"<h1>Страница приложения Games</h1>"
                         f"<p>Текущий slug: {game}</p>")
@@ -117,3 +130,4 @@ def archive(request, year):
 
 def page_not_found(request, exception):
     return HttpResponseNotFound("<h1>Страница не найдена</h1>")
+

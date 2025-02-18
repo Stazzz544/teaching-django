@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06311651-cc84-4552-b266-c67c1653c063" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/games/templates/games/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/games/templates/games/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/games/templates/games/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/games/templates/readme.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/site.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/site.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coolsite/coolsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/coolsite/coolsite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coolsite/coolsite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/coolsite/coolsite/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coolsite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/coolsite/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coolsite/games/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/coolsite/games/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coolsite/games/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/coolsite/games/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coolsite/games/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/coolsite/games/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/help commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/help commands.txt" afterDir="false" />
@@ -34,13 +34,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/cooding/python/django/site/coolsite/games/templates/games",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "promo.django"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\cooding\python\django\site\coolsite\games\templates\games" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\cooding\python\django\site\coolsite" />
+      <recent name="D:\cooding\python\django\site\coolsite\coolsite" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -58,5 +70,27 @@
       <updated>1739818519660</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/coolsite/coolsite/urls.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
